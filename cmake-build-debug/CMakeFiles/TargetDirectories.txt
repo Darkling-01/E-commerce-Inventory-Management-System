@@ -1,0 +1,3 @@
+C:/Users/barra/Documents/E-commerce_Inventory_Management_System/cmake-build-debug/CMakeFiles/E_commerce_Inventory_Management_System.dir
+C:/Users/barra/Documents/E-commerce_Inventory_Management_System/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/barra/Documents/E-commerce_Inventory_Management_System/cmake-build-debug/CMakeFiles/rebuild_cache.dir
