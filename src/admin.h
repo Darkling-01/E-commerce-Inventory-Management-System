@@ -14,6 +14,8 @@ public:
         passwd = checkUsername;
     }
 
+    void admin_account();
+
 private:
     std::string passwd;
     std::string username;
