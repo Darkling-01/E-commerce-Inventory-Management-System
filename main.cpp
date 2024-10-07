@@ -12,7 +12,7 @@ int main() {
     std::unordered_map<std::string, std::function<void()>> actions;
 
     actions["admin"] = [&admin](){
-        admin.admin_account();
+        admin.admin_menu();
     };
 
     std::cout << "Welcome to ECIM System" << std::endl;

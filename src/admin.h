@@ -11,14 +11,17 @@ class Admin{
 public:
     void validation(std::string checkPasswd, std::string checkUsername){
         passwd = checkPasswd;
-        passwd = checkUsername;
+        usrname = checkUsername;
     }
 
-    void admin_account();
+
+    void admin_menu();
+    void CreateAccount();
+    void Add_inventory(std::string name, std::string description, int price, int quantity);
 
 private:
     std::string passwd;
-    std::string username;
+    std::string usrname;
 };
 
 #endif //E_COMMERCE_INVENTORY_MANAGEMENT_SYSTEM_ADMIN_H
