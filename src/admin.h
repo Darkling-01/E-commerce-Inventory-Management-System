@@ -16,8 +16,9 @@ public:
 
 
     void admin_menu();
-    void CreateAccount();
-    void Add_inventory(std::string name, std::string description, int price, int quantity);
+    void createAccount();
+    void login();
+    void add_Inventory(std::string name, std::string description, int price, int quantity);
 
 private:
     std::string passwd;

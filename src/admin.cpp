@@ -6,6 +6,7 @@
 #include <string>
 #include <unordered_map>
 #include <functional>
+#include <fstream>
 
 #include "admin.h"
 
@@ -16,24 +17,16 @@ void Admin::admin_menu() {
     std::string command;
 
     action["1"] = [&admin](){
-
-        std::string usrname;
-        std::string passwd;
-
-        std::cout << "Admin Username:";
-        std::cin >> usrname;
-        std::cout << "Admin Password:";
-        std::cin >> passwd;
-
-        admin.validation(usrname, passwd);
+        admin.login();
     };
 
     action["2"] = [&admin](){
-
+        admin.createAccount();
     };
 
     std::cout << "Choose your option: " << std::endl;
     std::cout << "1 - Login" << std::endl;
+    std::cout << "2 - Create Account" << std::endl;
     std::cin >> command;
 
     auto it = action.find(command);
@@ -43,11 +36,38 @@ void Admin::admin_menu() {
         std::cout << "No Command Found" << std::endl;
 }
 
-void Admin::CreateAccount(){
-    // code goes here
+void Admin::createAccount(){
+    std::ofstream OStream;  // a temporary file to save accounts. A testing ground
+    OStream.open("Accounts", std::ofstream::out | std::ofstream::app);
+
+    // check if file open successfully
+    if(!OStream){
+        std::cout << "Failed to open file" << std::endl;
+    }
+    std::cout << "Choose Username: " << std::endl;
+    std::cin >> usrname;
+    std::cout << "Choose Passwd: " << std::endl;
+    std::cin >> passwd;
+
+    // writes to the file
+    OStream << usrname << std::endl;
+    OStream << passwd << std::endl;
+
+    OStream.close();   // close the file when done
 }
 
-void Admin::Add_inventory(std::string name, std::string description, int price, int quantity){
+void Admin::login(){
+    std::string usrname;
+    std::string passwd;
+
+    std::cout << "Admin Username:";
+    std::cin >> usrname;
+    std::cout << "Admin Password:";
+    std::cin >> passwd;
+
+}
+
+void Admin::add_Inventory(std::string name, std::string description, int price, int quantity){
     // code goes here
 }
 
