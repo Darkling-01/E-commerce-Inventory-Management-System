@@ -2,17 +2,17 @@
 #include <unordered_map>
 #include <functional>
 
-#include "src/admin.h"
+#include "src/accounts.h"
 
 
 int main() {
-    Admin admin;
+    Accounts acc;
     std::string command;
 
     std::unordered_map<std::string, std::function<void()>> actions;
 
-    actions["admin"] = [&admin](){
-        admin.admin_menu();
+    actions["admin"] = [&acc](){
+        acc.accounts_menu();
     };
 
     std::cout << "Welcome to ECIM System" << std::endl;
