@@ -6,6 +6,8 @@
 #define E_COMMERCE_INVENTORY_MANAGEMENT_SYSTEM_ACCOUNTS_H
 
 #include <string>
+#include <stdint.h>
+
 
 class Accounts{
 public:
@@ -14,8 +16,8 @@ public:
         usrname = checkUsername;
     }
 
-    void encrypt();
-    void decrypt();
+    void encrypt(uint32_t* v);
+    void decrypt(uint32_t* v);
     void accounts_menu();
     void createAccount();
     void login();

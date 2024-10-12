@@ -7,11 +7,26 @@
 #include <unordered_map>
 #include <functional>
 #include <fstream>
+#include <stdint.h>
 
 #include "accounts.h"
 
-void Accounts::encrypt() {
 
+uint32_t KEY[4];   // key space for bit shifts
+
+// v - vector used for randomness, k - key
+void Accounts::encrypt(uint32_t* v) {
+    uint32_t v0 = v[0], v1 = v[1], sum{0}, i;   // set up
+    uint32_t delta = 0x9E3779B9;   // a key schedule constant
+    for(i=0; i < 32; i++){   // basic start cycle
+        v0 += ((v1<<4) + KEY[0]) ^ (v1+sum) ^ ((v1>>5) + KEY[1]);
+        v0 += ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
+    }           // end cycle
+    v[0] = v0, v[1] = v1;
+}
+
+void Accounts::decrypt(uint32_t *v) {
+    // code here
 }
 
 
