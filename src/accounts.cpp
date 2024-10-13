@@ -16,22 +16,34 @@ uint32_t KEY[4];   // key space for bit shifts
 
 // v - vector used for randomness, k - key
 void Accounts::encrypt(uint32_t* v) {
+
     uint32_t v0 = v[0], v1 = v[1], sum{0}, i;   // set up
     uint32_t delta = 0x9E3779B9;   // a key schedule constant
     for(i=0; i < 32; i++){   // basic start cycle
         v0 += ((v1<<4) + KEY[0]) ^ (v1+sum) ^ ((v1>>5) + KEY[1]);
-        v0 += ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
+        v1 += ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
     }           // end cycle
     v[0] = v0, v[1] = v1;
 }
 
 void Accounts::decrypt(uint32_t *v) {
-    // code here
+
+    uint32_t v0 = v[0], v1 = v[1], sum{}, i;
+    uint32_t delta = 0x9E3779B9;
+    for(i=0; i < 32; i++){
+        v1 -= ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
+        v0 -= ((v1<<4) + KEY[0]) ^ (v1+sum) ^ ((v1>>5) + KEY[1]);
+        sum -= delta;
+    }
+    v[0] = v0, v[1] = v1;
+
 }
 
 
 void Accounts::accounts_menu() {
+
     Accounts acc;
+
     std::unordered_map<std::string, std::function<void()>> action;
     std::string command;
 
@@ -56,6 +68,7 @@ void Accounts::accounts_menu() {
 }
 
 void Accounts::createAccount(){
+
     std::ofstream OStream;  // a temporary file to save accounts. A testing ground
     OStream.open("Accounts", std::ofstream::out | std::ofstream::app);
 
@@ -75,10 +88,12 @@ void Accounts::createAccount(){
     OStream << usrname << std::endl;
     OStream << passwd << std::endl;
 
+
     OStream.close();   // close the file when done
 }
 
 void Accounts::login(){
+
     std::string usrname;
     std::string passwd;
 

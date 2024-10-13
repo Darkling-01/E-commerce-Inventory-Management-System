@@ -1,9 +1,7 @@
 # ninja log v5
 5	73	7498774152020854	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/inventory.cpp.obj	58424c0c9dbadc0a
-4	777	7500611867184175	CMakeFiles/E_commerce_Inventory_Management_System.dir/main.cpp.obj	b17d0d115fd3bf36
-5	760	7501472934755124	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/admin.cpp.obj	da480145a2437d7f
-761	893	7501472936045492	E_commerce_Inventory_Management_System.exe	d39bcddf2d151d38
-5	369	7502388525166507	build.ninja	d388383814ea5a62
 6	575	7502388531724594	CMakeFiles/E_commerce_Inventory_Management_System.dir/main.cpp.obj	b17d0d115fd3bf36
-2	601	7502388531987884	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj	154a8d87869c346e
+5	760	7501472934755124	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/admin.cpp.obj	da480145a2437d7f
 601	833	7502388534276542	E_commerce_Inventory_Management_System.exe	ff1f6cb9af1df4f7
+5	369	7504859691344779	build.ninja	d388383814ea5a62
+2	601	7502388531987884	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj	154a8d87869c346e
