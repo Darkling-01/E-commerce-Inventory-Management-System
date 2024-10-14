@@ -16,8 +16,8 @@ public:
         usrname = checkUsername;
     }
 
-    void encrypt(uint32_t* v);
-    void decrypt(uint32_t* v);
+    void encrypt(uint32_t v[2], const uint32_t k[4]);
+    void decrypt(uint32_t v[2], const uint32_t k[4]);
     void accounts_menu();
     void createAccount();
     void login();

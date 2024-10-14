@@ -12,30 +12,32 @@
 #include "accounts.h"
 
 
-uint32_t KEY[4];   // key space for bit shifts
-
-// v - vector used for randomness, k - key
-void Accounts::encrypt(uint32_t* v) {
+// k - key space for bit shifts
+// v - vector used for randomness
+void Accounts::encrypt(uint32_t v[2], const uint32_t k[4]) {
 
     uint32_t v0 = v[0], v1 = v[1], sum{0}, i;   // set up
     uint32_t delta = 0x9E3779B9;   // a key schedule constant
+    uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];
     for(i=0; i < 32; i++){   // basic start cycle
-        v0 += ((v1<<4) + KEY[0]) ^ (v1+sum) ^ ((v1>>5) + KEY[1]);
-        v1 += ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
+        sum += delta;
+        v0 += ((v1<<4) + k0) ^ (v1+sum) ^ ((v1>>5) + k1);
+        v1 += ((v0<<4) + k2) ^ (v0+sum) ^ ((v0>>5) + k3);
     }           // end cycle
-    v[0] = v0, v[1] = v1;
+    v[0] = v0; v[1] = v1;
 }
 
-void Accounts::decrypt(uint32_t *v) {
+void Accounts::decrypt(uint32_t v[2], const uint32_t k[4]) {
 
     uint32_t v0 = v[0], v1 = v[1], sum{}, i;
     uint32_t delta = 0x9E3779B9;
+    uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];
     for(i=0; i < 32; i++){
-        v1 -= ((v0<<4) + KEY[2]) ^ (v0+sum) ^ ((v1>>5) + KEY[3]);
-        v0 -= ((v1<<4) + KEY[0]) ^ (v1+sum) ^ ((v1>>5) + KEY[1]);
+        v1 -= ((v0<<4) + k2) ^ (v0+sum) ^ ((v1>>5) + k3);
+        v0 -= ((v1<<4) + k0) ^ (v1+sum) ^ ((v1>>5) + k1);
         sum -= delta;
     }
-    v[0] = v0, v[1] = v1;
+    v[0] = v0; v[1] = v1;
 
 }
 
@@ -84,10 +86,11 @@ void Accounts::createAccount(){
     std::cout << "Choose Passwd: " << std::endl;
     std::cin >> passwd;
 
+
+
     // writes to the file
     OStream << usrname << std::endl;
     OStream << passwd << std::endl;
-
 
     OStream.close();   // close the file when done
 }
