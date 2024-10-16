@@ -18,9 +18,11 @@ public:
 
     void encrypt(uint32_t v[2], const uint32_t k[4]);
     void decrypt(uint32_t v[2], const uint32_t k[4]);
+    void encrypt_password(const std::string& password, const uint32_t k[4]);
     void accounts_menu();
     void createAccount();
     void login();
+    void deleteItems();
     void add_Inventory(std::string name, std::string description, int price, int quantity);
 
 private:

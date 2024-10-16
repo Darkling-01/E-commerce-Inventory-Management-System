@@ -41,6 +41,11 @@ void Accounts::decrypt(uint32_t v[2], const uint32_t k[4]) {
 
 }
 
+void Accounts::encrypt_password(const std::string &password, const uint32_t *k) {
+    // ensure we have enough space for data
+    uint32_t v[2] = {0, 0};
+    // postponed this part
+}
 
 void Accounts::accounts_menu() {
 
@@ -57,9 +62,17 @@ void Accounts::accounts_menu() {
         acc.createAccount();
     };
 
+    action["3"] = [&acc]() {
+        acc.deleteItems();
+    };
+
     std::cout << "Choose your option: " << std::endl;
     std::cout << "1 - Login" << std::endl;
     std::cout << "2 - Create Account" << std::endl;
+    std::cout << "3 - Delete Item(s)" << std::endl;
+    std::cout << "4 - Modify Data" << std::endl;
+    std::cout << "5 - Add Item(s)" << std::endl;
+
     std::cin >> command;
 
     auto it = action.find(command);
@@ -85,8 +98,6 @@ void Accounts::createAccount(){
     std::cin >> usrname;
     std::cout << "Choose Passwd: " << std::endl;
     std::cin >> passwd;
-
-
 
     // writes to the file
     OStream << usrname << std::endl;
