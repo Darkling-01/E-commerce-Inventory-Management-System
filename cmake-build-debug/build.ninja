@@ -67,6 +67,12 @@ build CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj
   OBJECT_DIR = CMakeFiles\E_commerce_Inventory_Management_System.dir
   OBJECT_FILE_DIR = CMakeFiles\E_commerce_Inventory_Management_System.dir\src
 
+build CMakeFiles/E_commerce_Inventory_Management_System.dir/src/admin.cpp.obj: CXX_COMPILER__E_commerce_Inventory_Management_System_Debug C$:/Users/barra/Documents/E-commerce_Inventory_Management_System/src/admin.cpp || cmake_object_order_depends_target_E_commerce_Inventory_Management_System
+  DEP_FILE = CMakeFiles\E_commerce_Inventory_Management_System.dir\src\admin.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\E_commerce_Inventory_Management_System.dir
+  OBJECT_FILE_DIR = CMakeFiles\E_commerce_Inventory_Management_System.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target E_commerce_Inventory_Management_System
@@ -75,7 +81,7 @@ build CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj
 #############################################
 # Link the executable E_commerce_Inventory_Management_System.exe
 
-build E_commerce_Inventory_Management_System.exe: CXX_EXECUTABLE_LINKER__E_commerce_Inventory_Management_System_Debug CMakeFiles/E_commerce_Inventory_Management_System.dir/main.cpp.obj CMakeFiles/E_commerce_Inventory_Management_System.dir/src/inventory.cpp.obj CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj
+build E_commerce_Inventory_Management_System.exe: CXX_EXECUTABLE_LINKER__E_commerce_Inventory_Management_System_Debug CMakeFiles/E_commerce_Inventory_Management_System.dir/main.cpp.obj CMakeFiles/E_commerce_Inventory_Management_System.dir/src/inventory.cpp.obj CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj CMakeFiles/E_commerce_Inventory_Management_System.dir/src/admin.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\E_commerce_Inventory_Management_System.dir

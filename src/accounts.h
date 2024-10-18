@@ -22,8 +22,7 @@ public:
     void accounts_menu();
     void createAccount();
     void login();
-    void deleteItems();
-    void add_Inventory(std::string name, std::string description, int price, int quantity);
+    void credentials_Recovery();
 
 private:
     std::string passwd;

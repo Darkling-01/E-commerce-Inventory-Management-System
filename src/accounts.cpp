@@ -62,16 +62,14 @@ void Accounts::accounts_menu() {
         acc.createAccount();
     };
 
-    action["3"] = [&acc]() {
-        acc.deleteItems();
+    action["3"] = [&acc](){
+        acc.credentials_Recovery();
     };
 
     std::cout << "Choose your option: " << std::endl;
     std::cout << "1 - Login" << std::endl;
     std::cout << "2 - Create Account" << std::endl;
-    std::cout << "3 - Delete Item(s)" << std::endl;
-    std::cout << "4 - Modify Data" << std::endl;
-    std::cout << "5 - Add Item(s)" << std::endl;
+    std::cout << "2 - Forgot Password/Username" << std::endl;
 
     std::cin >> command;
 
@@ -116,9 +114,7 @@ void Accounts::login(){
     std::cout << "Admin Password:";
     std::cin >> passwd;
 
-}
 
-void Accounts::add_Inventory(std::string name, std::string description, int price, int quantity){
-    // code goes here
+
 }
 
