@@ -7,10 +7,6 @@
 
 #include <string>
 
-struct deletion{
-       
-}
-
 class Admin{
 public:
     void adminMenu();
