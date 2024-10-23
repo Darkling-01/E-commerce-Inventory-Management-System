@@ -22,11 +22,8 @@ public:
     Library(){
         head == nullptr;
     }
-
     // function to insert book
-    void insertBook(int ISBN, std::string title, std::string author){
-
-    }
+    void insertBook(int ISBN, std::string title, std::string author);
 
 private:
     Book* head;
