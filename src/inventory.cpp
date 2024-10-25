@@ -21,3 +21,9 @@ void Library::insertBook(int ISBN, std::string title, std::string author) {
     std::cout << "Book inserted successfully" << std::endl;
 }
 
+// issue a book
+void Library::issueBook(int ISBN) {
+
+}
+
+
