@@ -23,7 +23,32 @@ void Library::insertBook(int ISBN, std::string title, std::string author) {
 
 // issue a book
 void Library::issueBook(int ISBN) {
+    Book* current = head;
+    while(current != nullptr){
+        if(current->ISBN == ISBN){
+            if(!current -> isIssued){
+                current->isIssued = true;
+                std::cout << "Book is issue successfully" << std::endl;
+            }
+            else{
+                std::cout << "Book is already issued" << std::endl;
+            }
 
+            // used to exit the void function by returning nothing
+            return;
+
+        }
+
+        current = current->Next;
+    }
+
+    std::cout << "Book not found" << std::endl;
 }
+
+// function to deposit book
+void Library::depositBook(int ISBN) {
+    // code goes here
+}
+
 
 

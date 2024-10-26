@@ -25,6 +25,7 @@ public:
     // function to insert book
     void insertBook(int ISBN, std::string title, std::string author);
     void issueBook(int ISBN);
+    void depositBook(int ISBN);
 
 private:
     Book* head;
