@@ -26,6 +26,7 @@ public:
     void insertBook(int ISBN, std::string title, std::string author);
     void issueBook(int ISBN);
     void depositBook(int ISBN);
+    void findAllIssueBooks();
 
 private:
     Book* head;
