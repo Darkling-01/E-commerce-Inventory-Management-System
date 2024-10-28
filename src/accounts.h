@@ -22,7 +22,7 @@ public:
     void accounts_menu();
     void createAccount();
     void login();
-    void credentials_Recovery();
+    // void credentials_Recovery();
 
 private:
     std::string passwd;

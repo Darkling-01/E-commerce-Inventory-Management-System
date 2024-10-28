@@ -62,9 +62,10 @@ void Accounts::accounts_menu() {
         acc.createAccount();
     };
 
-    action["3"] = [&acc](){
+    /* action["3"] = [&acc](){
         acc.credentials_Recovery();
     };
+    */
 
     std::cout << "Choose your option: " << std::endl;
     std::cout << "1 - Login" << std::endl;
@@ -113,7 +114,6 @@ void Accounts::login(){
     std::cin >> usrname;
     std::cout << "Admin Password:";
     std::cin >> passwd;
-
 
 
 }
