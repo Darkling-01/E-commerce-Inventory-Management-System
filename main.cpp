@@ -15,8 +15,20 @@ int main() {
         acc.accounts_menu();
     };
 
+    actions["user"] = [&acc](){
+        acc.login_user_account();
+    };
+
+    actions["exit"] = [&acc](){
+        return EXIT_SUCCESS;
+    };
+
     std::cout << "Welcome to ECIM System" << std::endl;
     std::cout << "-----------------------" << std::endl;
+    std::cout << "Admin" << std::endl;
+    std::cout << "User" << std::endl;
+    std::cout << "Exit" << std::endl;
+
     std::cin >> command;
 
     auto it = actions.find(command);

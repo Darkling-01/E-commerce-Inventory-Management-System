@@ -69,7 +69,7 @@ void Accounts::accounts_menu() {
 
     std::cout << "Choose your option: " << std::endl;
     std::cout << "1 - Login" << std::endl;
-    std::cout << "2 - Create Account" << std::endl;
+    std::cout << "2 - Add Account" << std::endl;
     std::cout << "2 - Forgot Password/Username" << std::endl;
 
     std::cin >> command;

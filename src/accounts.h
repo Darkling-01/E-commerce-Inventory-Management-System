@@ -24,6 +24,9 @@ public:
     void login();
     // void credentials_Recovery();
 
+    // user accounts
+    void login_user_account();
+
 private:
     std::string passwd;
     std::string usrname;
