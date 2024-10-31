@@ -19,7 +19,12 @@ int main() {
         acc.login_user_account();
     };
 
+    actions["user guide"] = [&acc](){
+        acc.user_guide();
+    };
+
     actions["exit"] = [&acc](){
+        std::cout << "Logged out..." << std::endl;
         return EXIT_SUCCESS;
     };
 
@@ -27,6 +32,7 @@ int main() {
     std::cout << "-----------------------" << std::endl;
     std::cout << "Admin" << std::endl;
     std::cout << "User" << std::endl;
+    std::cout << "User Guide" << std::endl;
     std::cout << "Exit" << std::endl;
 
     std::cin >> command;
