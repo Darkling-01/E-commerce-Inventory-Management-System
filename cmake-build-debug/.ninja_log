@@ -24,3 +24,8 @@
 656	802	7517784131398357	E_commerce_Inventory_Management_System.exe	8cbed3d05251d771
 3	577	7519145461496898	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/inventory.cpp.obj	58424c0c9dbadc0a
 9	981	7519145465534903	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj	154a8d87869c346e
+7	627	7522604540637404	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/admin.cpp.obj	da480145a2437d7f
+10	651	7522604540879287	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj	154a8d87869c346e
+2	553	7522604996360324	CMakeFiles/E_commerce_Inventory_Management_System.dir/main.cpp.obj	b17d0d115fd3bf36
+2	569	7522605798687097	CMakeFiles/E_commerce_Inventory_Management_System.dir/src/accounts.cpp.obj	154a8d87869c346e
+570	684	7522605799811808	E_commerce_Inventory_Management_System.exe	8cbed3d05251d771

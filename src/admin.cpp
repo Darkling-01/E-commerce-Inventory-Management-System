@@ -15,11 +15,11 @@ void Admin::adminMenu() {
     std::string command;
 
     action["1"] = [&admin]() {
-        admin.insertBook();
+        // admin.insertBook();
     };
 
     action["2"] = [&admin](){
-        admin.issueBook();
+        // admin.issueBook();
     };
 
     std::cout << "Admin Menu" << std::endl;

@@ -11,19 +11,19 @@ int main() {
 
     std::unordered_map<std::string, std::function<void()>> actions;
 
-    actions["admin"] = [&acc](){
+    actions["Admin"] = [&acc](){
         acc.accounts_menu();
     };
 
-    actions["user"] = [&acc](){
+    actions["User"] = [&acc](){
         acc.login_user_account();
     };
 
-    actions["user guide"] = [&acc](){
-        acc.user_guide();
+    actions["Guide"] = [&acc](){
+        acc.account_guide();
     };
 
-    actions["exit"] = [&acc](){
+    actions["Exit"] = [&acc](){
         std::cout << "Logged out..." << std::endl;
         return EXIT_SUCCESS;
     };
@@ -32,7 +32,7 @@ int main() {
     std::cout << "-----------------------" << std::endl;
     std::cout << "Admin" << std::endl;
     std::cout << "User" << std::endl;
-    std::cout << "User Guide" << std::endl;
+    std::cout << "Guide" << std::endl;
     std::cout << "Exit" << std::endl;
 
     std::cin >> command;

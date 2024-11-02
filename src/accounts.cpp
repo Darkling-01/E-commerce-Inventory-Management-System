@@ -11,7 +11,6 @@
 
 #include "accounts.h"
 
-
 // k - key space for bit shifts
 // v - vector used for randomness
 void Accounts::encrypt(uint32_t v[2], const uint32_t k[4]) {
@@ -116,5 +115,21 @@ void Accounts::login(){
     std::cin >> passwd;
 
 
+}
+
+void Accounts::login_user_account() {
+    // code here
+}
+
+void Accounts::account_guide() {
+    // create a loop to display all lines of account_guide.txt
+    std::string guide_text;
+    std::ifstream readGuide("../info/account_guide.txt");
+
+    while(std::getline(readGuide, guide_text)){
+        std::cout << guide_text;
+    }
+
+    readGuide.close();
 }
 

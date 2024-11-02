@@ -26,7 +26,7 @@ public:
 
     // user accounts
     void login_user_account();
-    void user_guide();
+    void account_guide();
 
 private:
     std::string passwd;
