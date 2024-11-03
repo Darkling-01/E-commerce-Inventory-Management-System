@@ -124,10 +124,10 @@ void Accounts::login_user_account() {
 void Accounts::account_guide() {
     // create a loop to display all lines of account_guide.txt
     std::string guide_text;
-    std::ifstream readGuide("../info/account_guide.txt");
+    std::ifstream readGuide("..\\..\\E-commerce_Inventory_Management_System\\info\\account_guide.txt");
 
     while(std::getline(readGuide, guide_text)){
-        std::cout << guide_text;
+        std::cout << guide_text << std::endl;
     }
 
     readGuide.close();
