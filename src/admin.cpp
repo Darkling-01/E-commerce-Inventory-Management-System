@@ -8,24 +8,45 @@
 #include <string>
 #include <iostream>
 
+// implement a method to return back to previous action
+
 void Admin::adminMenu() {
     Admin admin;
-
-    std::unordered_map<std::string, std::function<void()>> action;
     std::string command;
 
-    action["1"] = [&admin]() {
-        // admin.insertBook();
-    };
-
-    action["2"] = [&admin](){
-        // admin.issueBook();
-    };
+    int ISBN{0};
+    std::string title, author;
 
     std::cout << "Admin Menu" << std::endl;
-    std::cout << "1 - Add Book" << std::endl;
-    std::cout << "2 - Issue Book" << std::endl;
-    std::cout << "3 - Deposit Book" << std::endl;
+    std::cout << "- Insert Book" << std::endl;
+    std::cout << "- Issue Book" << std::endl;
+    std::cout << "- Deposit Book" << std::endl;
+
+    std::cin >> command;
+
+    if(command == "Insert Book"){
+        std::cout << "Enter ISBN: ";
+        std::cin >> ISBN;
+
+        std::cout << "Title: ";
+        std::cin >> title;
+
+        std::cout << "Author: ";
+        std::cin >> author;
+
+        admin.insertBook(ISBN, title, author);
+    }
+    else if(command == "Issue Book"){
+        std::cout << "Enter ISBN: ";
+        std::cin >> ISBN;
+    }
+    else if(command == "Deposit Book"){
+        std::cout << "Enter ISBN: ";
+        std::cin >> ISBN;
+    }
+    else{
+        std::cout << "No command" << std::endl;
+    }
 
 }
 
