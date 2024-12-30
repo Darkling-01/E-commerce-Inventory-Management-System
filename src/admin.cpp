@@ -18,9 +18,10 @@ void Admin::adminMenu() {
     std::string title, author;
 
     std::cout << "Admin Menu" << std::endl;
-    std::cout << "- Insert Book" << std::endl;
-    std::cout << "- Issue Book" << std::endl;
-    std::cout << "- Deposit Book" << std::endl;
+    std::cout << "--------------" << std::endl;
+    std::cout << "Insert Book" << std::endl;
+    std::cout << "Issue Book" << std::endl;
+    std::cout << "Deposit Book" << std::endl;
 
     std::cin >> command;
 

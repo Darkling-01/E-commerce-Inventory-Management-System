@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <functional>
 #include <fstream>
-#include <stdint.h>
+#include <iomanip>
 
 #include "accounts.h"
 
@@ -54,7 +54,7 @@ void Accounts::accounts_menu() {
     std::string command;
 
     action["1"] = [&acc](){
-        acc.login();
+        acc.loginAdmin();
     };
 
     action["2"] = [&acc](){
@@ -66,9 +66,8 @@ void Accounts::accounts_menu() {
     };
     */
 
-    std::cout << "Choose your option: " << std::endl;
-    std::cout << "1 - Login" << std::endl;
-    std::cout << "2 - Add Account" << std::endl;
+    std::cout << "Choose your option: " << std::endl;    std::cout << "1 - Login" << std::endl;
+    std::cout << "2 - Create Account" << std::endl;
     std::cout << "2 - Forgot Password/Username" << std::endl;
 
     std::cin >> command;
@@ -81,9 +80,9 @@ void Accounts::accounts_menu() {
 }
 
 void Accounts::createAccount(){
-
+    std::ifstream columns;  // implementing columns to the .csv sheet for better tracking
     std::ofstream OStream;  // a temporary file to save accounts. A testing ground
-    OStream.open("Accounts", std::ofstream::out | std::ofstream::app);
+    OStream.open("Accounts.csv", std::ofstream::out | std::ofstream::app);
 
     // check if file open successfully
     if(!OStream){
@@ -94,17 +93,19 @@ void Accounts::createAccount(){
 
     std::cout << "Choose Username: " << std::endl;
     std::cin >> usrname;
-    std::cout << "Choose Passwd: " << std::endl;
+    std::cout << "Choose Password: " << std::endl;
     std::cin >> passwd;
 
     // writes to the file
-    OStream << usrname << std::endl;
-    OStream << passwd << std::endl;
+    OStream << std::setw(20) << std::left << usrname << std::setw(5) << std::right << passwd << std::endl;
 
     OStream.close();   // close the file when done
 }
 
-void Accounts::login(){
+void Accounts::loginAdmin(){
+    // store username and password if found in file
+    std::string searchUser;
+    std::string searchPass;
 
     std::string usrname;
     std::string passwd;
@@ -114,6 +115,12 @@ void Accounts::login(){
     std::cout << "Admin Password:";
     std::cin >> passwd;
 
+    // search file for username and password
+    for(int i = 1; ){
+
+    }
+
+    // admin password is verified
 
 }
 
@@ -131,5 +138,10 @@ void Accounts::account_guide() {
     }
 
     readGuide.close();
+}
+
+// Verify Accounts
+void Accounts::verify_account(){
+
 }
 
