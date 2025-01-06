@@ -21,7 +21,9 @@ public:
     void encrypt_password(const std::string& password, const uint32_t k[4]);
     void accounts_menu();
     void createAccount();
-    void login();
+    void verify_account();
+    void loginUser();
+    void loginAdmin();
     // void credentials_Recovery();
 
     // user accounts

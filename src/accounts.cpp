@@ -80,8 +80,12 @@ void Accounts::accounts_menu() {
 }
 
 void Accounts::createAccount(){
-    std::ifstream columns;  // implementing columns to the .csv sheet for better tracking
-    std::ofstream OStream;  // a temporary file to save accounts. A testing ground
+    // implementing columns to the .csv sheet for better tracking
+    std::ifstream columns;
+    // use ofstream to write in file
+    // a temporary file to save accounts. A testing ground
+    std::ofstream OStream;
+
     OStream.open("Accounts.csv", std::ofstream::out | std::ofstream::app);
 
     // check if file open successfully
@@ -104,11 +108,10 @@ void Accounts::createAccount(){
 
 void Accounts::loginAdmin(){
     // store username and password if found in file
-    std::string searchUser;
-    std::string searchPass;
+    std::ifstream IStream("Accounts.csv"); // use ifstream to read file
 
-    std::string usrname;
-    std::string passwd;
+    std::string storedUsername, storedPassword, usrname, passwd;
+    bool authenticated = false;
 
     std::cout << "Admin Username:";
     std::cin >> usrname;
@@ -116,11 +119,20 @@ void Accounts::loginAdmin(){
     std::cin >> passwd;
 
     // search file for username and password
-    for(int i = 1; ){
+    while(std::getline(IStream, storedUsername) && std::getline(IStream, storedPassword)){
+        if(usrname == storedUsername && passwd == storedPassword){
+            authenticated = true;
 
+            break; // breaks away from loop
+        }
     }
 
-    // admin password is verified
+    if (authenticated == true){
+        std::cout << "Successful Login";
+    }
+    else{
+        std::cout << "Failed to Login";
+    }
 
 }
 
